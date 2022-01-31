@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import MapKit
+
 
 struct ContentView: View {
+    @State private var region = MKCoordinateRegion(center:CLLocationCoordinate2D(latitude: 40.758896, longitude: -73.985130), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+       Map(coordinateRegion: $region)
     }
 }
 
