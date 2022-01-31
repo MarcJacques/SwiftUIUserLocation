@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		050D2DD927A76AA200E95910 /* SwiftUIUserLocationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050D2DD827A76AA200E95910 /* SwiftUIUserLocationApp.swift */; };
-		050D2DDB27A76AA200E95910 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050D2DDA27A76AA200E95910 /* ContentView.swift */; };
+		050D2DDB27A76AA200E95910 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050D2DDA27A76AA200E95910 /* MapView.swift */; };
 		050D2DDD27A76AA600E95910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 050D2DDC27A76AA600E95910 /* Assets.xcassets */; };
 		050D2DE027A76AA600E95910 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 050D2DDF27A76AA600E95910 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		050D2DD527A76AA200E95910 /* SwiftUIUserLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIUserLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		050D2DD827A76AA200E95910 /* SwiftUIUserLocationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIUserLocationApp.swift; sourceTree = "<group>"; };
-		050D2DDA27A76AA200E95910 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		050D2DDA27A76AA200E95910 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		050D2DDC27A76AA600E95910 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		050D2DDF27A76AA600E95910 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				050D2DD827A76AA200E95910 /* SwiftUIUserLocationApp.swift */,
-				050D2DDA27A76AA200E95910 /* ContentView.swift */,
+				050D2DDA27A76AA200E95910 /* MapView.swift */,
 				050D2DDC27A76AA600E95910 /* Assets.xcassets */,
 				050D2DDE27A76AA600E95910 /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				050D2DDB27A76AA200E95910 /* ContentView.swift in Sources */,
+				050D2DDB27A76AA200E95910 /* MapView.swift in Sources */,
 				050D2DD927A76AA200E95910 /* SwiftUIUserLocationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
