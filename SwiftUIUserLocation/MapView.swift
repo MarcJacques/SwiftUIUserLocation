@@ -46,17 +46,15 @@ final class MapViewModel: ObservableObject {
         switch locationManager.authorizationStatus {
             
         case .notDetermined:
-            <#code#>
+            locationManager.requestWhenInUseAuthorization()
         case .restricted:
-            <#code#>
+            print("Location is resctricted due to parental controls ")
         case .denied:
-            <#code#>
-        case .authorizedAlways:
-            <#code#>
-        case .authorizedWhenInUse:
-            <#code#>
+            print("Location information is denied.")
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
         @unknown default:
-            <#code#>
+            break
         }
     }
 }
