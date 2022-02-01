@@ -13,11 +13,13 @@ import MapKit
 struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
     
-    @State private var region = MKCoordinateRegion(center:CLLocationCoordinate2D(latitude: 40.758896, longitude: -73.985130), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-    
     var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true)
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
             .ignoresSafeArea()
+            .accentColor(Color(.systemPink))
+            .onAppear {
+                viewModel.checkifLocationServicesIsEnabled()
+            }
     }
 }
 
@@ -28,6 +30,8 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+    
+    @Published var region = MKCoordinateRegion(center:CLLocationCoordinate2D(latitude: 40.758896, longitude: -73.985130), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
 
     var locationManager: CLLocationManager?
     
@@ -40,7 +44,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         }
     }
     
-    func checkLocationAuthorization() {
+    private func checkLocationAuthorization() {
         guard let locationManager = locationManager else { return }
         
         switch locationManager.authorizationStatus {
@@ -52,7 +56,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         case .denied:
             print("Location information is denied.")
         case .authorizedAlways, .authorizedWhenInUse:
-            break
+            region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         @unknown default:
             break
         }
