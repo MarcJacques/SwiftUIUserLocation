@@ -27,14 +27,14 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-final class MapViewModel: ObservableObject {
+final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     var locationManager: CLLocationManager?
     
     func checkifLocationServicesIsEnabled() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager = CLLocationManager()
-            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager!.delegate = self
         } else {
             print("Turn on location")
         }
@@ -56,5 +56,9 @@ final class MapViewModel: ObservableObject {
         @unknown default:
             break
         }
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
     }
 }
